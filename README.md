@@ -1,4 +1,4 @@
-# YOUR PROJECT TITLE Community Manager
+#PROJECT TITLE Community Manager
 #### Video Demo:  https://youtu.be/UrBAV67j-HY
 #### Description:
 
