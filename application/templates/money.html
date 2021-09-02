@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Money
+{% endblock %}
+
+{% block main %}
+    <h2>ASSETS</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Accounting title</th>
+                <th>Amount</th>
+                <th>date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for asset in assets %}
+                <tr>
+                    <td>{{  asset['accounting_title']  }}</td>
+                    <td>{{  asset['date']  }}</td>
+                    <td>￥{{  asset['amount']  }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="1">TOTAL</td>
+                <td></td>
+                <td>￥{{  assets_total  }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>LIABILITIES</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Accounting title</th>
+                <th>Amount</th>
+                <th>date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for liabilitie in liabilities %}
+                <tr>
+                    <td>{{  liabilitie['accounting_title']  }}</td>
+                    <td>{{  liabilitie['date']  }}</td>
+                    <td>￥{{  liabilitie['amount']  }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="1">TOTAL</td>
+                <td></td>
+                <td>￥{{  liabilities_total  }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

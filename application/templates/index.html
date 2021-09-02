@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!--contents location date start_time end_time participants-->
+                <th>contents</th>
+                <th>location</th>
+                <th>date</th>
+                <th>starttime</th>
+                <th>endtime</th>
+                <th>number of participants</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{  row['contents']  }}</td>
+                    <td>{{  row['location']  }}</td>
+                    <td>{{  row['date']  }}</td>
+                    <td>{{  row['start_time']  }}</td>
+                    <td>{{  row['end_time']  }}</td>
+                    <td>{{  row['participants']  }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
