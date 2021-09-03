@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Set Income
+{% endblock %}
+
+{% block main %}
+    <h1>Income</h1>
+    <form action="/setincome" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="accounting_title" placeholder="Title" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" min="1" name="amount" placeholder="Amount" type="number">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="date" placeholder="date" type="date">
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Set income</button>
+    </form>
+{% endblock %}

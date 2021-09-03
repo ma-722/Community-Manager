@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Set schedule
+{% endblock %}
+
+{% block main %}
+    <h1>Schedule</h1>
+    <form action="/setschedule" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="contents" placeholder="Contents" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off"  class="form-control" name="location" placeholder="Location" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off"  class="form-control" name="date" placeholder="date" type="date">
+        </div>
+        <div class="form-group">
+            start time
+            <input autocomplete="off"  class="form-control" name="start_time" placeholder="date" type="time">
+        </div>
+        <div class="form-group">
+            end time
+            <input autocomplete="off"  class="form-control" name="end_time" type="time">
+        </div>
+        <button class="btn btn-primary" type="submit">Set schedule</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block main %}
+    <div class="delete">
+      <h3></h3>
+      <form action="/delete_sche" method="post">
+        <button class="btn btn-primary" type="submit">Delete all schedule</button>
+      </form>
+    </div>
+    <div class="delete">
+      <h3></h3>
+      <form action="/delete_in" method="post">
+        <button class="btn btn-primary" type="submit">Delete all income</button>
+      </form>
+    </div>
+    <div class="delete">
+      <h3></h3>
+      <form action="/delete_ex" method="post">
+        <button class="btn btn-primary" type="submit">Delete all expence</button>
+      </form>
+    </div>
+{% endblock %}
