@@ -46,12 +46,14 @@ In summary, it's the interface between the user and the database.
 There is a function called "login_required" that checks if the session has a user ID and returns to the login screen if it doesn't.
 This allows you to implement the login function.
 
-"finance.db" is the database for this application.
+"CommunityManager.db" is the database for this application.
 The structure is as follows. Stores information about users, schedules, participants, assets, and liabilities.
 
 CREATE TABLE users (id INTEGER, username TEXT NOT NULL, hash TEXT NOT NULL, PRIMARY KEY(id));
 CREATE UNIQUE INDEX username ON users (username);
-CREATE TABLE schedule(id INTEGER, contents TEXT NOT NULL UNIQUE, location TEXT NOT NULL, date DATE NUT NULL, start_time TIME NOT NULL , end_time TIME NOT NULL, participants INTEGER NOT NULL, PRIMARY KEY(id));
-CREATE TABLE participation(id INTEGER, schedule_id INTEGER NOT NULL, user_id INTEGER NOT NULL, PRIMARY KEY(id), FOREIGN KEY(schedule_id) references schedule(id), FOREIGN KEY(user_id) references users(id));
+CREATE TABLE schedule(id INTEGER, contents TEXT NOT NULL UNIQUE, location TEXT NOT NULL, date DATE NUT NULL, 
+start_time TIME NOT NULL , end_time TIME NOT NULL, participants INTEGER NOT NULL, PRIMARY KEY(id));
+CREATE TABLE participation(id INTEGER, schedule_id INTEGER NOT NULL, user_id INTEGER NOT NULL, PRIMARY KEY(id), 
+FOREIGN KEY(schedule_id) references schedule(id), FOREIGN KEY(user_id) references users(id));
 CREATE TABLE assets(id INTEGER, accounting_title TEXT, amount INTEGER NUT NULL, date DATE NUT NULL, PRIMARY KEY(id));
 CREATE TABLE liabilities(id INTEGER, accounting_title TEXT, amount INTEGER NUT NULL, date DATE NUT NULL, PRIMARY KEY(id));
