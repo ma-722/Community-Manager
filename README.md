@@ -54,10 +54,10 @@ CREATE TABLE users (id INTEGER, username TEXT NOT NULL, hash TEXT NOT NULL, PRIM
 CREATE UNIQUE INDEX username ON users (username);
 
 CREATE TABLE schedule(id INTEGER, contents TEXT NOT NULL UNIQUE, location TEXT NOT NULL, date DATE NUT NULL, 
-start_time TIME NOT NULL , end_time TIME NOT NULL, participants INTEGER NOT NULL, PRIMARY KEY(id));
+                      start_time TIME NOT NULL , end_time TIME NOT NULL, participants INTEGER NOT NULL, PRIMARY KEY(id));
 
 CREATE TABLE participation(id INTEGER, schedule_id INTEGER NOT NULL, user_id INTEGER NOT NULL, PRIMARY KEY(id), 
-FOREIGN KEY(schedule_id) references schedule(id), FOREIGN KEY(user_id) references users(id));
+                           FOREIGN KEY(schedule_id) references schedule(id), FOREIGN KEY(user_id) references users(id));
 
 CREATE TABLE assets(id INTEGER, accounting_title TEXT, amount INTEGER NUT NULL, date DATE NUT NULL, PRIMARY KEY(id));
 
